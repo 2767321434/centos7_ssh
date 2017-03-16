@@ -1,5 +1,5 @@
 # centos7_ssh
-FROM centos7
+FROM centos:7
 MAINTAINER lnterface [https://github.com/2767321434/centos7_ssh]
 RUN yum install wget -y
 RUN yum install passwd openssl openssh-server -y
