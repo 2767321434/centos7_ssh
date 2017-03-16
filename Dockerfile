@@ -9,9 +9,7 @@ RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key -N ''
 RUN sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 RUN sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
 EXPOSE 22
-#run sshd
-RUN /usr/sbin/sshd -D
-RUN echo “rootkey″ | passwd --stdin root
+
 
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
