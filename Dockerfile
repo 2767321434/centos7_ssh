@@ -10,6 +10,9 @@ RUN sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/ss
 RUN sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
 EXPOSE 22
 
+#RUN wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh
+#RUN chmod +x shadowsocks-go.sh
+#RUN echo "123456" "8989" "" |./shadowsocks-go.sh --stdin 2>&1 | tee shadowsocks-go.log
 
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
