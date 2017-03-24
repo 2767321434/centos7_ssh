@@ -4,7 +4,7 @@ PASS=${ROOT_PASS:-$(pwgen -s 12 1)}
 _word=$( [ ${ROOT_PASS} ] && echo "preset" || echo "random" )
 echo "=> Setting a ${_word} password to the root user"
 echo "root:$PASS" | chpasswd
-
+echo ${SS_PASS} |./shadowsocks-go.sh 2>&1 | tee shadowsocks-go.log
 echo "=> Done!"
 
 echo "========================================================================"
