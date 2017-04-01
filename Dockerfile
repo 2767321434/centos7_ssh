@@ -11,9 +11,11 @@ RUN sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
 EXPOSE 22
 
 RUN wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh
-RUN chmod +x shadowsocks-go.sh
 
+
+COPY shadowsocks-go.sh /usr/local/bin/
 COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/shadowsocks-go.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
