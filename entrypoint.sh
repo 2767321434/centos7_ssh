@@ -8,7 +8,7 @@ _sspw=${SS_PASS}
 if [ -z "$_sspw" ]; then 
    _sspw="123456" 
 fi
-echo $_sspw |/root/shadowsocks-go.sh 2>&1 | tee shadowsocks-go.log
+echo $_sspw |/usr/local/bin/shadowsocks-go.sh 2>&1 | tee shadowsocks-go.log
 echo "=> Done!"
 
 echo "========================================================================"
