@@ -8,6 +8,7 @@ RUN ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N ''
 RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key -N ''
 RUN sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 RUN sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
+RUN chkconfig sshd on
 EXPOSE 22
 
 #RUN wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh
