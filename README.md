@@ -1,1 +1,1 @@
-# centos7_ssh
+# centos7_ssh+shadowsocks for docker image
